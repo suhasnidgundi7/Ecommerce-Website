@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from PIL import Image
+from django.utils import timezone
 
 # Create your models here.
 
@@ -16,6 +17,10 @@ class Product(models.Model):
     name = models.CharField(max_length=200, null=True)
     price = models.FloatField()
     digital = models.BooleanField(default=False, null=True, blank=False)
+    Category= models.CharField(max_length=100, default="")
+    sub_category= models.CharField(max_length=100, default="")
+    Description=models.CharField(max_length=300, default="")
+    pub_date=models.DateField(default=timezone.now)
     image = models.ImageField(null=True, blank=True)
 
     def save(self, *args, **kwargs):

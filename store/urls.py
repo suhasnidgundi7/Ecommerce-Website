@@ -10,4 +10,6 @@ urlpatterns = [
 
     path('update_item/', views.updateItem, name="update_item"),
 
+    path('search/', views.search, name="search"),
+
 ]

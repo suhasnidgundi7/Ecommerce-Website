@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, HttpResponse
 from django.http import JsonResponse
 from .models import *
 import json
@@ -74,3 +74,9 @@ def updateItem(request):
 
     return JsonResponse('ITEM WERE ADDED', safe=False)
 
+def search(request):
+    query = request.GET['query']
+    # AllProducts = Product.objects.filter()
+    AllProducts = Product.objects.filter(name__icontains=query)
+    context={'AllProducts': AllProducts}
+    return render(request, 'store/search.html', context)

@@ -1,5 +1,6 @@
 body{
 	background-color: hsl(0, 0%, 98%);
+	font-size: 1.5rem;
 }
 
 h1,h2,h3,h4,h5,h6{
@@ -26,7 +27,7 @@ h1,h2,h3,h4,h5,h6{
 }
 
 #cart-icon{
-	width:25px;
+	width:50px;
 	display: inline-block;
 	margin-left: 15px;
 }
@@ -37,9 +38,9 @@ h1,h2,h3,h4,h5,h6{
 	color:#fff;
 	background-color: red;
 	width: 20px;
-	height: 25px;
+	height: 20px;
 	border-radius: 50%;
-	font-size: 14px;
+	font-size: 15px;
 }
 
 .col-lg-4, .col-lg-6, .col-lg-8, .col-lg-12{
@@ -48,6 +49,8 @@ h1,h2,h3,h4,h5,h6{
 
 .btn{
 	border-radius: 0;
+	margin-right: 20px;
+	margin-left: 5px;	
 }
 
 .row-image{
@@ -92,4 +95,20 @@ h1,h2,h3,h4,h5,h6{
 
 .hidden{
 	display: none!important;
+}
+
+.navbar-brand {
+    display: inline-block;
+    padding-top: .3125rem;
+    padding-bottom: .3125rem;
+    margin-right: 1rem;
+    font-size: 1.50rem;
+    line-height: inherit;
+    white-space: nowrap;
+}
+
+.btn-info {
+    color: #fff;
+    background-color: #FFA000;
+    border-color: #FFA000;
 }
