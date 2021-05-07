@@ -1,7 +1,7 @@
 {% extends 'store/main.html' %}
 {% load static %}
 {% block content %}
-    <div class="row">
+    <div class="animate__animated animate__slideInUp row">
         {% for product in products %}
         <div class="col-lg-4">
             <img class="thumbnail" src="{{product.imageURL}}">
@@ -12,9 +12,12 @@
                 <button data-product="{{product.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">
                     Add To Cart
                 </button>
+                <button class="btn btn-outline-secondary add-btn">
+                    View
+                </button>
                 <h4 style="display: inline:block; float: right">
                     <strong>
-                        ₹{{product.price|floatformat:2}}
+                        ₹{{product.price}}
                     </strong>
                 </h4>
             </div>

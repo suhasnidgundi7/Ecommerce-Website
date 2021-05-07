@@ -12,6 +12,8 @@
 
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
 
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
 	<script type="text/javascript">
 		var user = '{{request.user}}'
 
@@ -63,7 +65,7 @@
 	     	<a href="{% url 'cart' %}">
 				<i class="fas fa-shopping-cart cart-icon"></i>
 	    	</a>
-	    	<p id="cart-total">0</p>
+	    	<p id="cart-total">{{cartItems}}</p>
 
 	    </div>
 	  </div>

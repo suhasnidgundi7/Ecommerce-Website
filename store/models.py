@@ -15,7 +15,7 @@ class Customer(models.Model):
 
 class Product(models.Model):
     name = models.CharField(max_length=200, null=True)
-    price = models.FloatField()
+    price=models.IntegerField(default=0)
     digital = models.BooleanField(default=False, null=True, blank=False)
     Category= models.CharField(max_length=100, default="")
     sub_category= models.CharField(max_length=100, default="")
