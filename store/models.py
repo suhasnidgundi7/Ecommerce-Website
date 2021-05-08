@@ -27,14 +27,14 @@ class Product(models.Model):
         super().save(*args, **kwargs)
         img = Image.open(self.image.path)
 
-        if img.height > 350 or img.weight > 250:
+        if img.height > 350 or img.width > 250:
             output_size = (350,250)
             img.thumbnail(output_size)
             img.save(self.image.path)
 
     def __str__(self):
         return self.name
-
+            
     @property
     def imageURL(self):
         try:
@@ -53,6 +53,15 @@ class Order(models.Model):
         return str(self.id)
 
     @property
+    def shipping(self):
+        shipping = False
+        orderitems = self.orderitem_set.all()
+        for i in orderitems:
+            if i.product.digital == False:
+                shipping = True
+        return shipping 
+
+    @property
     def get_cart_total(self):
         orderitems = self.orderitem_set.all()
         total = sum([item.get_total for item in orderitems])
@@ -63,6 +72,7 @@ class Order(models.Model):
         orderitems = self.orderitem_set.all()
         total = sum([item.quantity for item in orderitems])
         return total
+
 
 class OrderItem(models.Model):
     product = models.ForeignKey(Product, on_delete=models.SET_NULL, blank=True, null=True)
@@ -86,6 +96,9 @@ class ShippingAddress(models.Model):
 
     def __str__(self):
         return self.address
+
+
+
 
 
 
