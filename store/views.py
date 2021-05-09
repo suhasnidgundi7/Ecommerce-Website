@@ -96,3 +96,7 @@ def search(request):
     AllProducts = Product.objects.filter(name__icontains=query)
     context={'AllProducts': AllProducts}
     return render(request, 'store/search.html', context)
+
+def processOrder(request):
+    print('Data : ', request.body)
+    return JsonResponse("Payment Submitted : ", safe=False)
